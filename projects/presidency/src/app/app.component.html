@@ -1,0 +1,11 @@
+<app-navigation>
+  <ng-container nav-menu>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/own-feature']">Own feature</a>
+      <a mat-list-item [routerLink]="['/first-feature']">First feature</a>
+    </mat-nav-list>
+  </ng-container>
+  <ng-container nav-router-outlet>
+    <router-outlet></router-outlet>
+  </ng-container>
+</app-navigation>

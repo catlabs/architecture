@@ -3,5 +3,292 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "econsilium": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/econsilium",
+      "sourceRoot": "projects/econsilium/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/econsilium",
+            "index": "projects/econsilium/src/index.html",
+            "main": "projects/econsilium/src/main.ts",
+            "polyfills": "projects/econsilium/src/polyfills.ts",
+            "tsConfig": "projects/econsilium/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/econsilium/src/favicon.ico",
+              "projects/econsilium/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/econsilium/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/econsilium/src/environments/environment.ts",
+                  "with": "projects/econsilium/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "econsilium:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "econsilium:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "econsilium:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/econsilium/src/test.ts",
+            "polyfills": "projects/econsilium/src/polyfills.ts",
+            "tsConfig": "projects/econsilium/tsconfig.spec.json",
+            "karmaConfig": "projects/econsilium/karma.conf.js",
+            "assets": [
+              "projects/econsilium/src/favicon.ico",
+              "projects/econsilium/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/econsilium/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/econsilium/tsconfig.app.json",
+              "projects/econsilium/tsconfig.spec.json",
+              "projects/econsilium/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/econsilium/e2e/protractor.conf.js",
+            "devServerTarget": "econsilium:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "econsilium:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "presidency": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/presidency",
+      "sourceRoot": "projects/presidency/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/presidency",
+            "index": "projects/presidency/src/index.html",
+            "main": "projects/presidency/src/main.ts",
+            "polyfills": "projects/presidency/src/polyfills.ts",
+            "tsConfig": "projects/presidency/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/presidency/src/favicon.ico",
+              "projects/presidency/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/presidency/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/presidency/src/environments/environment.ts",
+                  "with": "projects/presidency/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "presidency:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "presidency:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "presidency:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/presidency/src/test.ts",
+            "polyfills": "projects/presidency/src/polyfills.ts",
+            "tsConfig": "projects/presidency/tsconfig.spec.json",
+            "karmaConfig": "projects/presidency/karma.conf.js",
+            "assets": [
+              "projects/presidency/src/favicon.ico",
+              "projects/presidency/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/presidency/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/presidency/tsconfig.app.json",
+              "projects/presidency/tsconfig.spec.json",
+              "projects/presidency/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/presidency/e2e/protractor.conf.js",
+            "devServerTarget": "presidency:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "presidency:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "lib": {
+      "projectType": "library",
+      "root": "projects/lib",
+      "sourceRoot": "projects/lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/lib/tsconfig.lib.json",
+            "project": "projects/lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib/src/test.ts",
+            "tsConfig": "projects/lib/tsconfig.spec.json",
+            "karmaConfig": "projects/lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lib/tsconfig.lib.json",
+              "projects/lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "econsilium"
 }
